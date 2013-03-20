@@ -23,7 +23,7 @@ ckm <- read.csv("ckm.csv")
 # Adopters is a vector containing the number of people who had adopted by a
 # given date with the date given by the index of the vector. It ends at 17
 # because that is the maximum finite date in the data set variable.
-adopters <- sapply(1:17, function(x) {
+adopters <- sapply(1:finteMax(ckm$adoption_date), function(x) {
 		return(countLessThan(x, ckm$adoption_date))
 	})
 
